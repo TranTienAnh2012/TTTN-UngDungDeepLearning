@@ -1,0 +1,68 @@
+import cv2
+import threading
+from queue import Queue
+from insightface.app import FaceAnalysis
+
+# Định nghĩa một lớp (Class) để đọc camera trên luồng riêng
+class VideoGet:
+    """
+    Class dùng để đọc video từ camera trong một luồng riêng biệt,
+    giúp Main Thread không bị block bởi việc đọc camera.
+    """
+    def __init__(self, src=0):
+        self.stream = cv2.VideoCapture(src)
+        (self.grabbed, self.frame) = self.stream.read()
+        self.stopped = False
+
+    def start(self):
+        # Tạo và khởi chạy luồng đọc camera
+        threading.Thread(target=self.get, args=()).start()
+        return self
+
+    def get(self):
+        # Vòng lặp liên tục đọc khung hình mới
+        while not self.stopped:
+            if not self.grabbed:
+                self.stop()
+            else:
+                (self.grabbed, self.frame) = self.stream.read()
+
+    def stop(self):
+        self.stopped = True
+        self.stream.release()
+
+# Khởi tạo InsightFace
+# HÀNH ĐỘNG 3: Thử chuyển buffalo_l thành buffalo_sc nếu vẫn chậm
+app = FaceAnalysis(name='buffalo_sc') 
+app.prepare(ctx_id=0, det_size=(320, 320)) # HÀNH ĐỘNG 4: Giảm det_size xuống nhỏ hơn
+
+# Khởi chạy luồng đọc camera
+video_getter = VideoGet(0).start()
+
+print("Đang mở camera và AI...")
+
+while True:
+    # Lấy khung hình mới nhất từ luồng đọc camera (cực nhanh)
+    frame = video_getter.frame
+
+    if not video_getter.grabbed or video_getter.stopped:
+        break
+
+    # Đưa khung hình vào AI phân tích (phần này vẫn gây lag, nhưng Main Thread không bị lock)
+    faces = app.get(frame)
+
+    # Vẽ khung quanh khuôn mặt
+    for face in faces:
+        bbox = face.bbox.astype(int)
+        cv2.rectangle(frame, (bbox[0], bbox[1]), (bbox[2], bbox[3]), (0, 255, 0), 2)
+
+    # Hiển thị lên màn hình
+    cv2.imshow('He Thong Nhan Dien Mượt Mà Hơn', frame)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Tắt chương trình
+video_getter.stop()
+cv2.destroyAllWindows()
+# đoạn code này mượt hơn nhưng sẽ kém chính xác hơn

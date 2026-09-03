@@ -1,0 +1,25 @@
+pip install onnxruntime
+pip install opencv-python insightface onnxruntime
+pip install mysql-connector-python numpy
+
+database:
+
+CREATE TABLE face_attendance_db;
+
+-- Tạo bảng lưu thông tin sinh viên và đường dẫn file khuôn mặt
+CREATE TABLE students (
+    student_id VARCHAR(20) PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    class_name VARCHAR(50),
+    embedding_path VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tạo bảng lưu nhật ký điểm danh (Dùng cho phần nhận diện sau này)
+CREATE TABLE attendance_logs (
+    log_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id VARCHAR(20),
+    scan_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50) DEFAULT 'Present',
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
