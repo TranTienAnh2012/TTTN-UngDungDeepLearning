@@ -12,9 +12,9 @@ from insightface.app import FaceAnalysis
 DB_CONFIG = {
     'host': '127.0.0.1',
     'user': 'root',
-    'password': 'tienanh2005',
+    'password': '',
     'database': 'face_attendance_db',
-    'port': 3309
+    'port': 3306
 }
 
 print("=== ĐĂNG KÝ SINH TRẮC HỌC CHỐNG GIẢ MẠO (Siêu Tốc 10ms ~ 100 FPS) ===")
