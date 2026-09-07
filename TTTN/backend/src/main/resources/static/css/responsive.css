@@ -1,0 +1,119 @@
+@media (max-width: 1120px) {
+
+    .slider_section .carousel-control-prev,
+    .slider_section .carousel-control-next {
+        left: 59.3%;
+        top: 82%;
+        background-color: #ab9d92;
+    }
+
+    .slider_section .carousel-control-prev {
+        left: 46%;
+        transform: translateX(-50%);
+    }
+
+    .slider_section .carousel-control-next {
+        left: calc(46% + 55px);
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {
+
+
+    .hero_area {
+        height: auto;
+    }
+
+    .slider_section .number-box .num-box h6,
+    .slider_section .number-box .num-box::before {
+        display: none;
+    }
+
+    .slider_section {
+        padding: 50px 0 125px 0;
+    }
+
+    .slider_section .carousel-control-prev,
+    .slider_section .carousel-control-next {
+
+        top: 87%;
+    }
+
+    .slider_section .detail-box {
+        text-align: center;
+    }
+
+    .slider_section .detail-box h1 {
+        font-size: 5rem;
+    }
+
+    .slider_section .detail-box p {
+        width: 100%;
+    }
+
+    .project_section .owl-carousel .owl-nav .owl-prev {
+        left: -15%;
+    }
+
+    .project_section .owl-carousel .owl-nav .owl-next {
+        right: -15%;
+    }
+
+    .contact_form-container button {
+        margin-bottom: 45px;
+    }
+
+    .info_section .col-md-3 {
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    .info_section form input {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .project_section .owl-carousel .owl-nav .owl-prev,
+    .project_section .owl-carousel .owl-nav .owl-next {
+        display: none;
+    }
+
+    .slider_section .carousel-control-prev {
+        left: 44%;
+    }
+
+    .slider_section .carousel-control-next {
+        left: calc(44% + 55px);
+    }
+
+}
+
+@media (max-width: 480px) {
+    .client_section .client-box {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .slider_section .detail-box h1 {
+        font-size: 4rem;
+    }
+
+    .about_section .detail-box {
+        padding: 50px 15px 75px 35px;
+    }
+}
+
+@media (max-width: 360px) {}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+
+}
