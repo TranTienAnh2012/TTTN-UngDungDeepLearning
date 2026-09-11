@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Lịch Học & Lịch Thi - Face Attendance AI</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Fonts style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Hero Area / Header Section -->
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="Logo" />
+            <span>FACE ATTENDANCE <strong>AI</strong></span>
+          </a>
+
+          <!-- Main Nav Tabs -->
+          <div class="inodino-nav-tabs">
+            <a href="index.html" class="nav-item-btn">
+              <span>📸</span> Điểm danh Lớp học
+            </a>
+            <a href="exam-verification.html" class="nav-item-btn">
+              <span>🎓</span> Xác thực Phòng thi
+            </a>
+            <a href="schedules.html" class="nav-item-btn active">
+              <span>📅</span> Lịch học & Lịch thi
+            </a>
+            <a href="about.html" class="nav-item-btn">
+              <span>ℹ️</span> Giới thiệu AI
+            </a>
+          </div>
+
+          <div class="header-status-box" style="display: flex; align-items: center; gap: 10px;">
+            <a href="admin.html" class="nav-item-btn admin-tab" style="margin-bottom: 0;">
+              <span>⚙️</span> Trang Quản Trị
+            </a>
+            <div class="badge-ai-status">
+              <span class="status-dot-pulse"></span>
+              <span>AI Core: InsightFace & Spring Boot</span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <div class="container inodino-hero-banner">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="hero-title">
+            DANH MỤC MÔN HỌC <br />
+            <span>VÀ LỊCH TRÌNH ĐÀO TẠO</span>
+          </h1>
+          <p class="hero-subtitle">
+            Tra cứu thông tin môn học, lịch học các ca trong tuần và lịch thi tại các phòng thi.
+          </p>
+        </div>
+        <div class="col-lg-4 text-right d-none d-lg-block">
+          <img src="images/interior-design.png" alt="Face AI Illustration" style="max-height: 140px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Content: Lịch học & Lịch thi -->
+  <main class="main-app-content">
+    <div class="container">
+      <div class="inodino-heading">
+        <h3><span>📅</span> Danh Mục Môn Học & Lịch Trình</h3>
+        <p>Xem thông tin môn học, lịch học các ca trong tuần và lịch thi tại các phòng.</p>
+      </div>
+
+      <div class="row">
+        <!-- Left: Courses & Class Schedules -->
+        <div class="col-lg-6">
+          <div class="inodino-card">
+            <div class="card-header-bar">
+              <h4><span>📚</span> Danh Mục Môn Học</h4>
+            </div>
+            <div class="inodino-table-wrapper">
+              <table class="inodino-table">
+                <thead>
+                  <tr>
+                    <th>Mã Môn</th>
+                    <th>Tên Môn Học</th>
+                  </tr>
+                </thead>
+                <tbody id="manage-courses-tbody">
+                  <tr><td colspan="2" style="text-align:center; color:var(--text-muted);">Đang tải dữ liệu...</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="card-header-bar" style="margin-top: 20px;">
+              <h4><span>🏫</span> Lịch Học Ca Trong Tuần</h4>
+            </div>
+            <div class="inodino-table-wrapper">
+              <table class="inodino-table">
+                <thead>
+                  <tr>
+                    <th>Môn học</th>
+                    <th>Phòng</th>
+                    <th>Bắt đầu</th>
+                    <th>Kết thúc</th>
+                  </tr>
+                </thead>
+                <tbody id="manage-class-tbody">
+                  <tr><td colspan="4" style="text-align:center; color:var(--text-muted);">Đang tải dữ liệu...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Exam Schedules -->
+        <div class="col-lg-6">
+          <div class="inodino-card">
+            <div class="card-header-bar">
+              <h4><span>📝</span> Lịch Thi & Phòng Thi</h4>
+            </div>
+            <div class="inodino-table-wrapper">
+              <table class="inodino-table">
+                <thead>
+                  <tr>
+                    <th>Môn thi</th>
+                    <th>Phòng thi</th>
+                    <th>Thời gian thi</th>
+                  </tr>
+                </thead>
+                <tbody id="manage-exam-tbody">
+                  <tr><td colspan="3" style="text-align:center; color:var(--text-muted);">Đang tải dữ liệu...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="inodino-modal-backdrop">
+    <div class="inodino-modal-window" style="max-width: 400px;">
+      <div class="modal-head">
+        <h4><span>🔑</span> Đăng Nhập Quản Trị</h4>
+        <button class="modal-close-x" onclick="closeLoginModal()">&times;</button>
+      </div>
+      <form id="login-form">
+        <div class="inodino-form-group">
+          <label class="inodino-label">Tài khoản:</label>
+          <input type="text" id="login-username" class="inodino-input" required placeholder="Nhập tên đăng nhập">
+        </div>
+        <div class="inodino-form-group">
+          <label class="inodino-label">Mật khẩu:</label>
+          <input type="password" id="login-password" class="inodino-input" required placeholder="Nhập mật khẩu">
+        </div>
+        <div id="login-error-msg" style="color: #dc2626; font-size: 0.8rem; margin-top: 6px; display: none;"></div>
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px;">
+          <button type="button" class="inodino-btn inodino-btn-dark inodino-btn-sm" onclick="closeLoginModal()">Hủy</button>
+          <button type="submit" class="inodino-btn inodino-btn-primary inodino-btn-sm">Đăng Nhập</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast-container" class="inodino-toast-box"></div>
+
+  <!-- Footer -->
+  <footer class="footer_section text-center">
+    <div class="container">
+      <p style="margin: 0;">
+        &copy; 2026 Hệ Thống Điểm Danh & Xác Thực Phòng Thi Khuôn Mặt. Vận hành bởi Spring Boot 3 & InsightFace.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/schedules.js"></script>
+</body>
+
+</html>

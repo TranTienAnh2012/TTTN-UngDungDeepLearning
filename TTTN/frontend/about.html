@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Giới Thiệu Kiến Trúc AI - Face Attendance AI</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Fonts style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Hero Area / Header Section -->
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="Logo" />
+            <span>FACE ATTENDANCE <strong>AI</strong></span>
+          </a>
+
+          <!-- Main Nav Tabs -->
+          <div class="inodino-nav-tabs">
+            <a href="index.html" class="nav-item-btn">
+              <span>📸</span> Điểm danh Lớp học
+            </a>
+            <a href="exam-verification.html" class="nav-item-btn">
+              <span>🎓</span> Xác thực Phòng thi
+            </a>
+            <a href="schedules.html" class="nav-item-btn">
+              <span>📅</span> Lịch học & Lịch thi
+            </a>
+            <a href="about.html" class="nav-item-btn active">
+              <span>ℹ️</span> Giới thiệu AI
+            </a>
+          </div>
+
+          <div class="header-status-box" style="display: flex; align-items: center; gap: 10px;">
+            <a href="admin.html" class="nav-item-btn admin-tab" style="margin-bottom: 0;">
+              <span>⚙️</span> Trang Quản Trị
+            </a>
+            <div class="badge-ai-status">
+              <span class="status-dot-pulse"></span>
+              <span>AI Core: InsightFace & Spring Boot</span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <div class="container inodino-hero-banner">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="hero-title">
+            KIẾN TRÚC CÔNG NGHỆ <br />
+            <span>TRÍ TUỆ NHÂN TẠO AI</span>
+          </h1>
+          <p class="hero-subtitle">
+            Tổng quan kiến trúc phân tán gồm InsightFace Engine (buffalo_l / ArcFace), Java Spring Boot Core Backend, OpenCV Desktop và MySQL Database.
+          </p>
+        </div>
+        <div class="col-lg-4 text-right d-none d-lg-block">
+          <img src="images/interior-design.png" alt="Face AI Illustration" style="max-height: 140px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Content: Giới thiệu AI -->
+  <main class="main-app-content">
+    <div class="container">
+      <div class="inodino-heading">
+        <h3><span>💡</span> Kiến Trúc Công Nghệ Hệ Thống</h3>
+        <p>Tổng quan mô hình xử lý nhận diện khuôn mặt và kết nối dịch vụ thời gian thực.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="inodino-card text-center" style="height: 100%;">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">🧠</div>
+            <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--primary);">AI Service (Python & InsightFace)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              Sử dụng mô hình <strong>RetinaFace</strong> phát hiện khuôn mặt và <strong>ArcFace (buffalo_l)</strong> trích xuất vector đặc trưng 512 chiều với tốc độ siêu tốc ~10ms trên CPU/GPU qua ONNX Runtime.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="inodino-card text-center" style="height: 100%;">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">☕</div>
+            <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--primary);">Backend Core (Spring Boot 3)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              Spring Boot (Java 17) quản lý toàn bộ nghiệp vụ điểm danh đúng giờ / muộn, xác thực tư cách dự thi, quản lý lớp học, phân ca thi và RESTful API Client.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="inodino-card text-center" style="height: 100%;">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">🎥</div>
+            <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--primary);">OpenCV Desktop & Web Client</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              Module xử lý luồng Video đa luồng (Multi-threading) tốc độ cao 60-100 FPS, kiểm soát góc quay khuôn mặt (Head Pose) chống giả mạo ảnh chụp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="inodino-modal-backdrop">
+    <div class="inodino-modal-window" style="max-width: 400px;">
+      <div class="modal-head">
+        <h4><span>🔑</span> Đăng Nhập Quản Trị</h4>
+        <button class="modal-close-x" onclick="closeLoginModal()">&times;</button>
+      </div>
+      <form id="login-form">
+        <div class="inodino-form-group">
+          <label class="inodino-label">Tài khoản:</label>
+          <input type="text" id="login-username" class="inodino-input" required placeholder="Nhập tên đăng nhập">
+        </div>
+        <div class="inodino-form-group">
+          <label class="inodino-label">Mật khẩu:</label>
+          <input type="password" id="login-password" class="inodino-input" required placeholder="Nhập mật khẩu">
+        </div>
+        <div id="login-error-msg" style="color: #dc2626; font-size: 0.8rem; margin-top: 6px; display: none;"></div>
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px;">
+          <button type="button" class="inodino-btn inodino-btn-dark inodino-btn-sm" onclick="closeLoginModal()">Hủy</button>
+          <button type="submit" class="inodino-btn inodino-btn-primary inodino-btn-sm">Đăng Nhập</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast-container" class="inodino-toast-box"></div>
+
+  <!-- Footer -->
+  <footer class="footer_section text-center">
+    <div class="container">
+      <p style="margin: 0;">
+        &copy; 2026 Hệ Thống Điểm Danh & Xác Thực Phòng Thi Khuôn Mặt. Vận hành bởi Spring Boot 3 & InsightFace.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+</body>
+
+</html>
